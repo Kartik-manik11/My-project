@@ -1,10 +1,14 @@
-#include<stdio.h>
-#include<string.h>
- 
+#include <stdio.h>
+#include <string.h>
+
+#define NUM_STUDENTS 2
+#define NUM_EVENTS 3
+
 enum Eventtype{
     cultural,
     sports,
-    technical};
+    technical
+};
 
 union Score{
     int score;
@@ -41,7 +45,7 @@ for(i=0;i<NUM_STUDENTS;i++){
     printf("enter phone no.: ");
     scanf("%9s", students[i].phone); // limit to avoid overflow
     printf("enter email: ");
-    scanf("%49s", students[i].email);
+    scanf("%49s \n", students[i].email);
 for(j=0;j<NUM_EVENTS;j++){
     printf("Event name: ");
     scanf("%49s", students[i].event[j].Eventname);
@@ -94,10 +98,18 @@ void report(student students[]){
     void leaderboard(student students[]){
         int i;
         printf("LEADERBOARD\n");
-        printf("Name \t Total Marks \t Average \t Grade \t");
-        for(i=0;i<2;i++){
-            printf(" %s \t %d \t %f \t %c \t",student[i].name,student[i].totalmarks,student[i].avg,student[i].grade);
+        printf("Name \t Total Marks \t Average \t Grade \t\n");
+        for(i=0;i<NUM_STUDENTS;i++){
+            printf("%s \t %d \t %.2f \t %c\n", students[i].name, students[i].totalmarks, students[i].avg, students[i].grade);
         }
     }
-    
 
+int main(void){
+    student students[NUM_STUDENTS];
+    addstudent(students);
+    report(students);
+    sort(students);
+    printf("\nAfter sorting:\n");
+    leaderboard(students);
+    return 0;
+}
