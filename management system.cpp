@@ -31,17 +31,17 @@ typedef struct student{
 
 void addstudent(student students[]){
     int i,j;
-for(i=0;i<2;i++){
-    printf("enter roll no");
+for(i=0;i<NUM_STUDENTS;i++){
+    printf("enter roll no: ");
     scanf("%d",&students[i].rollno);
-    printf("name");
-    scanf("%s", students[i].name);
+    printf("name: ");
+    scanf("%49s", students[i].name);
     printf("Enter age");
     scanf("%d",&students[i].age);
-    printf("enter phone no.");
-    scanf("%s", students[i].phone); //%d has used
-    printf("enter email");
-    scanf("%s", students[i].email);
+    printf("enter phone no.: ");
+    scanf("%9s", students[i].phone); // limit to avoid overflow
+    printf("enter email: ");
+    scanf("%49s", students[i].email);
 for(j=0;j<3;j++){
     printf("Event name");
     scanf("%s", students[i].event[j].Eventname);
