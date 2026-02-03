@@ -59,23 +59,20 @@ for(j=0;j<NUM_EVENTS;j++){
 }
 
 void report(student students[]){
-        int i,j;
-        for(i=0;i<NUM_STUDENTS;i++){
-        students[i].totalmarks=0;
-            for(j=0;j<NUM_EVENTS;j++){
-                 students[i].totalmarks+=students[i].event[j].score.score;}
-                 // student[i].totalmarks=  student[i].totalmarks+student[i].event[j].score.score;
-            students[i].avg = (float)students[i].totalmarks / (float)NUM_EVENTS;}
+    int i,j;
+    for(i=0;i<NUM_STUDENTS;i++){
+        students[i].totalmarks = 0;
+        for(j=0;j<NUM_EVENTS;j++){
+            students[i].totalmarks += students[i].event[j].score.score;
+        }
+        students[i].avg = (float)students[i].totalmarks / (float)NUM_EVENTS;
         printf("\n");
-        if(students[i].avg >= 45){
+        if(students[i].avg >= 45)
             students[i].grade='A';
-        }
-        else if(students[i].avg >= 35){
+        else if(students[i].avg >= 35)
             students[i].grade='B';
-        }
-        else{
+        else
             students[i].grade='C';
-        }
         printf(" %s \t %d \t %f \t %c \t", students[i].name, students[i].totalmarks, students[i].avg, students[i].grade);
     }
 } 
@@ -83,12 +80,12 @@ void report(student students[]){
     void sort(student students[]){
         int i,j;
         student temp;
-        for(i=0;i<2-1;i++){
-            for(j=i+1;j<2-i-1;j++){
-                if(students[i].totalmarks<students[j].totalmarks){
-                    temp=students[i];
-                    students[i]=students[j];
-                    students[j]=temp;
+        for(i=0;i<NUM_STUDENTS-1;i++){
+            for(j=i+1;j<NUM_STUDENTS;j++){
+                if(students[i].totalmarks < students[j].totalmarks){
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
