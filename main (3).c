@@ -1,23 +1,11 @@
 #include<stdio.h>
 #include<conio.h>
-//int
 void main(){
-    int length,breadth,area;
-    printf("length=");
-    scanf("%d",&length);
-    printf("\n");
-     printf("breadth=");
-    scanf("%d",&breadth);
-    printf("\n");
-    area=length*breadth;
-    printf("area= %d",area);
-    /* \n can be applied individually by using printf()
-    e.g
-    printf("\n");
-    */
-    //return 0;
-    getch();
+    int i,j;
+    for(i=1;i<7;i++){
+        for(j=1;j<i;j++){
+            printf("*");
+        }
+    printf("\n");}
 }
-    
-    
-    
+// can be used i/j<6 or i/j<=5

@@ -1,18 +1,12 @@
 #include<stdio.h>
 #include<conio.h>
-//int
 void main(){
-    int p;
-    printf("enter principal amount");
-    scanf("%d",&p);
-    int y;
-    printf("enter no. of years");
-    scanf("%d",&y);
-    float r;
-    printf("rate of interest");
-    scanf("%f",&r);
-    float si=(p*r*y)/100;
-    printf("simple interest will be %f",si);
-    getch();
-    
+    int i,j;
+    for(i=1;i<=5;i++){
+        for(j=1;j<=5;j++){
+            printf("%d",j);
+        }
+    printf("\n");}
 }
+// can be used i/j<6 or i/j<=5
+//similar above for pyramid

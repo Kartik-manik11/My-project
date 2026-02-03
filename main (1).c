@@ -1,13 +1,11 @@
 #include<stdio.h>
 #include<conio.h>
-//int could be use in place of void 
 void main(){
-    int a,b,area;
-    a=10;
-    b=5;
-    area=a*b;
-    printf("length= %d \n",a);
-     printf("breadth= %d \n",b);
-      printf("area= %d \n",area);
-      //return 0;
-      getch();}
+    int i,j;
+    for(i=1;i<6;i++){
+        for(j=1;j<6;j++){
+            printf("*");
+        }
+    printf("\n");}
+}
+// can be used i/j<6 or i/j<=5
