@@ -42,11 +42,12 @@ for(i=0;i<NUM_STUDENTS;i++){
     scanf("%9s", students[i].phone); // limit to avoid overflow
     printf("enter email: ");
     scanf("%49s", students[i].email);
-for(j=0;j<3;j++){
-    printf("Event name");
-    scanf("%s", students[i].event[j].Eventname);
-    printf("Event type: 0 for cultural, 1 for sports, 2 for technical");
-    scanf("%d",&students[i].event[j].type);
+for(j=0;j<NUM_EVENTS;j++){
+    printf("Event name: ");
+    scanf("%49s", students[i].event[j].Eventname);
+    printf("Event type: 0 for cultural, 1 for sports, 2 for technical: ");
+    int etype; scanf("%d", &etype);
+    students[i].event[j].type = (Eventtype)etype;
     printf("Max marks");
     scanf("%d",&students[i].event[j].maxmarks);
     printf("Scored marks");
@@ -59,12 +60,12 @@ for(j=0;j<3;j++){
 
 void report(student students[]){
         int i,j;
-        for(i=0;i<2;i++){
+        for(i=0;i<NUM_STUDENTS;i++){
         students[i].totalmarks=0;
-            for(j=0;j<3;j++){
+            for(j=0;j<NUM_EVENTS;j++){
                  students[i].totalmarks+=students[i].event[j].score.score;}
                  // student[i].totalmarks=  student[i].totalmarks+student[i].event[j].score.score;
-            students[i].avg=(float)students[i].totalmarks/3.0;}
+            students[i].avg = (float)students[i].totalmarks / (float)NUM_EVENTS;}
         printf("\n");
         if(students[i].avg >= 45){
             students[i].grade='A';
